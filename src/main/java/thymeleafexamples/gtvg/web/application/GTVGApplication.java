@@ -19,6 +19,7 @@
  */
 package thymeleafexamples.gtvg.web.application;
 
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+
 import thymeleafexamples.gtvg.web.controller.HomeController;
 import thymeleafexamples.gtvg.web.controller.IGTVGController;
 import thymeleafexamples.gtvg.web.controller.OrderDetailsController;
@@ -62,6 +64,7 @@ public class GTVGApplication {
         // Cache is set to true by default. Set to false if you want templates to
         // be automatically updated when modified.
         templateResolver.setCacheable(true);
+        templateResolver.setCharacterEncoding("utf-8");
         
         this.templateEngine = new TemplateEngine();
         this.templateEngine.setTemplateResolver(templateResolver);
